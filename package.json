@@ -1,0 +1,29 @@
+{
+  "name": "UniswapV3CloneDapp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "UniClone Dapp is a decentralized finance (DeFi) application that replicates the core functionalities of Uniswap V3, enabling users to swap, add liquidity, and manage their assets on the Ethereum blockchain with an optimized and user-friendly interface. / UniClone Dapp 是一个去中心化金融 (DeFi) 应用程序，复制了 Uniswap V3 的核心功能，使用户能够在以太坊区块链上进行代币交换、添加流动性和管理资产，并提供优化且用户友好的界面。",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.1.1",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@openzeppelin/contracts": "^3.4.2",
+    "@uniswap/smart-order-router": "^2.5.30",
+    "@uniswap/v3-periphery": "^1.0.1",
+    "@uniswap/v3-sdk": "^3.9.0",
+    "axios": "^1.2.1",
+    "bignumber.js": "^9.1.0",
+    "ethereum-waffle": "^3.4.4",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.11.2",
+    "next": "13.0.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "web3modal": "^1.9.9"
+  }
+}
