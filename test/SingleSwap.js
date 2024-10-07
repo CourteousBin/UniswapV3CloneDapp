@@ -1,5 +1,5 @@
 // 引入 Chai 库中的 expect 断言函数
-const { expect } = require("chai");
+// const { expect } = require("chai");
 // 引入 Hardhat 中的 ethers 库
 const { ethers } = require("hardhat");
 
@@ -46,6 +46,7 @@ describe("SingleSwapToken", () => {
     // 进行代币交换
     await singleSwapToken.swapExactInputSingle(amountIn);
     // 打印账户的 DAI 余额
+    console.log('singleSwapToken 49');
     console.log("DAI balance", await dai.balanceOf(accounts[0].address));
   });
 

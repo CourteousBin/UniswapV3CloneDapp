@@ -10,10 +10,11 @@ import Model from "../Model/Model";
 import TokenList from "../TokenList/TokenList";
 
 // CONTEXT
-// import { SwapTokenContext } from "@/Context/SwapContext";
+import { SwapTokenContext } from "../../Context/SwapContext";
 
 const NavBar = () => {
-  // const { ether, account, networkConnect, connectWallet, tokenData} = useContext(SwapTokenContext);
+  const { ether, account, networkConnect, connectWallet, tokenData } =
+    useContext(SwapTokenContext);
   const menuItems = [
     {
       name: "Swap",
@@ -32,7 +33,7 @@ const NavBar = () => {
   const [openModel, setOpenModel] = useState(false);
   const [openTokenBox, setOpenTokenBox] = useState(false);
 
-  const [account, setAccount] = useState(false);
+  // const [account, setAccount] = useState(false);
   return (
     <div className={Style.NavBar}>
       <div className={Style.NavBar_box}>
@@ -66,28 +67,26 @@ const NavBar = () => {
             <div className={Style.NavBar_box_right_box_img}>
               <Image src={images.ether} alt="NetWork" height={30} width={30} />
             </div>
-            {/* <p>{networkConnect}</p> */}
-            <p>Network Name</p>
+            <p>{networkConnect}</p>
           </div>
 
-          <button onClick={() => setOpenModel(true)}>Address</button>
-          {/* {account ? (
+          {account ? (
             <button onClick={() => setOpenTokenBox(true)}>
-              {account.slice(0,20)}...
+              {account.slice(0, 20)}...
             </button>
           ) : (
             <button onClick={() => setOpenModel(true)}>Connect</button>
-          )} */}
+          )}
 
           {openModel && (
-            <Model setOpenModel={setOpenModel} connectWallet="Connect Wallet" />
+            <Model setOpenModel={setOpenModel} connectWallet={connectWallet} />
           )}
         </div>
       </div>
 
       {/* //TOKENLIST COMPONENT */}
       {openTokenBox && (
-        <TokenList tokenDate="hey" setOpenTokenBox={setOpenTokenBox} />
+        <TokenList tokenDate={tokenData} setOpenTokenBox={setOpenTokenBox} />
       )}
     </div>
   );
